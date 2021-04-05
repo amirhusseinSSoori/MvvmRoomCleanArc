@@ -1,4 +1,5 @@
 import Dependencies.*
+
 plugins {
     id("com.android.application")
     kotlin("android")
@@ -9,46 +10,51 @@ plugins {
 }
 
 android {
-    compileSdkVersion (30)
-    buildToolsVersion ("30.0.3")
+    compileSdkVersion(30)
+    buildToolsVersion("30.0.3")
 
     defaultConfig {
-        applicationId ("com.amirhusseinsoori.mvvmtodolist")
-        minSdkVersion (22)
-        targetSdkVersion (30)
-        versionCode (1)
-        versionName ("1.0")
+        applicationId("com.amirhusseinsoori.mvvmtodolist")
+        minSdkVersion(22)
+        targetSdkVersion(30)
+        versionCode(1)
+        versionName("1.0")
         multiDexEnabled = true
-        testInstrumentationRunner ("androidx.test.runner.AndroidJUnitRunner")
+        testInstrumentationRunner("androidx.test.runner.AndroidJUnitRunner")
     }
 
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
             proguardFiles(
-                    getDefaultProguardFile("proguard-android-optimize.txt"),
-                    "proguard-rules.pro")
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
     compileOptions {
-        sourceCompatibility (JavaVersion.VERSION_1_8)
-        targetCompatibility (JavaVersion.VERSION_1_8)
+        sourceCompatibility(JavaVersion.VERSION_1_8)
+        targetCompatibility(JavaVersion.VERSION_1_8)
     }
     kotlinOptions {
         jvmTarget = ("1.8")
+        freeCompilerArgs += ("-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi")
+    }
+    buildFeatures {
+        viewBinding = true
     }
 }
 
 dependencies {
 
-    implementation (Dep.kotlin_stdlib)
-    implementation (Dep.androidx_core)
-    implementation (Dep.androidx_appcompat)
-    implementation (Dep.android_material)
-    implementation (Dep.constraintlayout)
-    testImplementation (Dep.junit)
-    androidTestImplementation (Dep.ext_junit)
-    androidTestImplementation (Dep.espresso_core)
+    implementation(Dep.kotlin_stdlib)
+    implementation(Dep.androidx_core)
+    implementation(Dep.androidx_appcompat)
+    implementation(Dep.android_material)
+    implementation(Dep.constraintlayout)
+    testImplementation(Dep.junit)
+    androidTestImplementation(Dep.ext_junit)
+    androidTestImplementation(Dep.espresso_core)
 
 
     //------------hilt -----------------------------------------
@@ -76,7 +82,7 @@ dependencies {
     implementation(Dep.coroutines_core)
     implementation(Dep.lifecycle)
 
-   //--------------util----------------
-    implementation (Dep.multidex)
+    //--------------util----------------
+    implementation(Dep.multidex)
 
 }
