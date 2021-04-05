@@ -1,4 +1,4 @@
-package com.amirhusseinsoori.mvvmtodolist
+package com.amirhusseinsoori.mvvmRoomCleanArc
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
