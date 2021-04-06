@@ -1,0 +1,1 @@
+C:\Users\HP\Desktop\MyWork\MvvmToDoList\buildSrc\build\classes\kotlin\main\Dependencies\BuildScript.class;C:\Users\HP\Desktop\MyWork\MvvmToDoList\buildSrc\build\classes\kotlin\main\Dependencies\Dep.class;C:\Users\HP\Desktop\MyWork\MvvmToDoList\buildSrc\build\classes\kotlin\main\Dependencies\Versions.class
