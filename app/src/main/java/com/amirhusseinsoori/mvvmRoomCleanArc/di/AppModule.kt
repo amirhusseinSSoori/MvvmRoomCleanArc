@@ -2,6 +2,7 @@ package com.amirhusseinsoori.mvvmRoomCleanArc.di
 
 import android.app.Application
 import androidx.room.Room
+import com.amirhusseinsoori.mvvmRoomCleanArc.common.Constants.dbName
 import com.codinginflow.mvvmtodo.data.TaskDatabase
 import dagger.Module
 import dagger.Provides
@@ -22,7 +23,7 @@ object AppModule {
     fun provideDatabase(
         app: Application,
         callback: TaskDatabase.Callback
-    ) = Room.databaseBuilder(app, TaskDatabase::class.java, "task_database")
+    ) = Room.databaseBuilder(app, TaskDatabase::class.java, dbName)
         .fallbackToDestructiveMigration()
         .addCallback(callback)
         .build()
