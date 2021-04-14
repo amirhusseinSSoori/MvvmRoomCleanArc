@@ -75,6 +75,13 @@ dependencies {
     kapt(Dep.room_compiler)
     implementation(Dep.room_ktx)
 
+    //----------------dataStore----------------------
+
+    implementation(Dep.dataStore)
+    implementation(Dep.dataStoreCore)
+    implementation(Dep.preferences)
+    implementation(Dep.preferences_core)
+
 
     //--------------kotlinx-coroutines----------------
 

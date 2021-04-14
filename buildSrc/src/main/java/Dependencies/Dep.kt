@@ -28,6 +28,13 @@ object Dep {
     val room_compiler="androidx.room:room-compiler:${Versions.roomVersion}"
     val room_ktx="androidx.room:room-ktx:${Versions.roomVersion}"
 
+    //-----------------DataStore-------------------------------
+    val dataStore="androidx.datastore:datastore:${Versions.dataStore}"
+    val dataStoreCore="androidx.datastore:datastore-core:${Versions.dataStore}"
+    val preferences="androidx.datastore:datastore-preferences:${Versions.dataStore}"
+    val preferences_core="androidx.datastore:datastore-preferences-core:${Versions.dataStore}"
+
+
 
     //--------------hilt----------------
     val hilt_android ="com.google.dagger:hilt-android:${Versions.hiltVersion}"

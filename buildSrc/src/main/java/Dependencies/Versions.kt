@@ -3,17 +3,17 @@ package Dependencies
 object Versions {
 
     //-----------------main-----------------
-    val kotlinSlib="1.4.31"
-    val coreKtx ="1.3.2"
-    val appcompat="1.2.0"
-    val material="1.3.0"
-    val constraint="2.0.4"
+    val kotlinSlib = "1.4.31"
+    val coreKtx = "1.3.2"
+    val appcompat = "1.2.0"
+    val material = "1.3.0"
+    val constraint = "2.0.4"
 
 
     //---------------------test-----------------
-    val junitVersion="4.13.2"
-    val extJunit="1.1.2"
-    val espressoCore="3.3.0"
+    val junitVersion = "4.13.2"
+    val extJunit = "1.1.2"
+    val espressoCore = "3.3.0"
 
 
     //--------------coroutines----------------
@@ -31,12 +31,16 @@ object Versions {
 
 
     //-------------Navigation component----------------------
-    val navigationVersion="2.3.4"
+    val navigationVersion = "2.3.4"
 
     //-------------Util----------------------
-    val multidex_version="2.0.1"
+    val multidex_version = "2.0.1"
 
     //--------------BuildScript-----------------------
 
-    val buildGradle="4.1.3"
+    val buildGradle = "4.1.3"
+
+    //--------------preferences--------------------------
+
+    val dataStore = "1.0.0-alpha08"
 }
