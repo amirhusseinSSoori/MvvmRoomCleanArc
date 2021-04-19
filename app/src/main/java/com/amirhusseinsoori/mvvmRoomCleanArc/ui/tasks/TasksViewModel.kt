@@ -1,6 +1,8 @@
 package com.amirhusseinsoori.mvvmRoomCleanArc.ui.tasks
 
 import androidx.lifecycle.*
+import com.amirhusseinsoori.mvvmRoomCleanArc.ADD_TASK_RESULT_OK
+import com.amirhusseinsoori.mvvmRoomCleanArc.EDIT_TASK_RESULT_OK
 import com.amirhusseinsoori.mvvmRoomCleanArc.data.PreferencesManager
 import com.amirhusseinsoori.mvvmRoomCleanArc.data.SortOrder
 import com.amirhusseinsoori.mvvmRoomCleanArc.data.Task
@@ -71,10 +73,23 @@ class TasksViewModel @Inject constructor(
     fun onAddNewTaskClick() = viewModelScope.launch {
         tasksEventChannel.send(TasksEvent.NavigateToAddTaskScreen)
     }
-
+    fun onAddEditResult(result: Int) {
+        when (result) {
+            ADD_TASK_RESULT_OK -> showTaskSavedConfirmationMessage("Task added")
+            EDIT_TASK_RESULT_OK -> showTaskSavedConfirmationMessage("Task updated")
+        }
+    }
+    private fun showTaskSavedConfirmationMessage(text: String) = viewModelScope.launch {
+        tasksEventChannel.send(TasksEvent.ShowTaskSavedConfirmationMessage(text))
+    }
+    fun onDeleteAllCompletedClick() = viewModelScope.launch {
+        tasksEventChannel.send(TasksEvent.NavigateToDeleteAllCompletedScreen)
+    }
     sealed class TasksEvent {
         object NavigateToAddTaskScreen : TasksEvent()
         data class NavigateToEditTaskScreen(val task: Task) : TasksEvent()
         data class ShowUndoDeleteTaskMessage(val task: Task) : TasksEvent()
+        data class ShowTaskSavedConfirmationMessage(val msg: String) : TasksEvent()
+        object NavigateToDeleteAllCompletedScreen : TasksEvent()
     }
 }
