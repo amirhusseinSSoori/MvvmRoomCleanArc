@@ -17,7 +17,7 @@ object Versions {
 
 
     //--------------coroutines----------------
-    val coroutinesVersion = "1.4.1"
+    val coroutinesVersion = "1.4.3"
     val coroutinesCore = "1.4.3"
     val lifecycleVersion = "2.3.0"
 
@@ -43,4 +43,10 @@ object Versions {
     //--------------preferences--------------------------
 
     val dataStore = "1.0.0-alpha08"
+
+    //-------------lifecycle---------------------------------
+    val liveDataVersion="2.3.0"
+
+
+    val fragmentVersion="1.3.0"
 }

@@ -20,7 +20,7 @@ object Dep {
     //--------------coroutines----------------
     val coroutines ="org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutinesVersion}"
     val coroutines_core="org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutinesCore}"
-    val lifecycle="androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycleVersion}"
+
 
 
     //--------------room----------------
@@ -45,6 +45,15 @@ object Dep {
     //-------------Navigation component----------------------
     val navigation_fragment_ktx ="androidx.navigation:navigation-fragment-ktx:${Versions.navigationVersion}"
     val navigation_ui_ktx = "androidx.navigation:navigation-ui-ktx:${Versions.navigationVersion}"
+
+
+    //---------------lifecycle-----------------------------------
+    val lifecycle="androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycleVersion}"
+    val liveData = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycleVersion}"
+    val javaCommon="android.arch.lifecycle:common-java8:${Versions.lifecycleVersion}"
+
+    //------------------fragment-------------------------------------
+    val fragment="androidx.fragment:fragment-ktx:${Versions.fragmentVersion}"
 
 
 

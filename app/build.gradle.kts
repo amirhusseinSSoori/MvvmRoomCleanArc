@@ -6,6 +6,7 @@ plugins {
     kotlin("kapt")
     id("kotlin-android-extensions")
     id("dagger.hilt.android.plugin")
+    id("androidx.navigation.safeargs.kotlin")
 
 }
 
@@ -91,5 +92,18 @@ dependencies {
 
     //--------------util----------------
     implementation(Dep.multidex)
+    //---------------lifecycle------------------
 
+    implementation(Dep.liveData)
+    implementation(Dep.javaCommon)
+
+
+
+    //------------------fragment-------------------
+    implementation(Dep.fragment)
+
+}
+
+kapt {
+    correctErrorTypes = true
 }
