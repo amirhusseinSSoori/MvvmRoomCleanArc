@@ -1,106 +1,81 @@
-import Dependencies.*
-
 plugins {
-    id("com.android.application")
-    kotlin("android")
-    kotlin("kapt")
-    id("kotlin-android-extensions")
-    id("dagger.hilt.android.plugin")
-    id("androidx.navigation.safeargs.kotlin")
+    androidApp()
+    kotlinAndroid()
+    kotlinAndroidExt()
+    kotlinKaptExt()
+    daggerHilt()
+    navigationComponent()
+
+
 
 }
 
 android {
-    compileSdkVersion(30)
-    buildToolsVersion("30.0.3")
-
-    defaultConfig {
-        applicationId("com.amirhusseinsoori.mvvmtodolist")
-        minSdkVersion(22)
-        targetSdkVersion(30)
-        versionCode(1)
-        versionName("1.0")
-        multiDexEnabled = true
-        testInstrumentationRunner("androidx.test.runner.AndroidJUnitRunner")
-    }
-
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
-    compileOptions {
-        sourceCompatibility(JavaVersion.VERSION_1_8)
-        targetCompatibility(JavaVersion.VERSION_1_8)
-    }
+    setAppConfig()
+    useDefaultBuildTypes()
+    activateJava8()
     kotlinOptions {
         jvmTarget = ("1.8")
         freeCompilerArgs += ("-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi")
     }
-    buildFeatures {
-        viewBinding = true
-    }
+
 }
 
 dependencies {
 
-    implementation(Dep.kotlin_stdlib)
-    implementation(Dep.androidx_core)
-    implementation(Dep.androidx_appcompat)
-    implementation(Dep.android_material)
-    implementation(Dep.constraintlayout)
-    testImplementation(Dep.junit)
-    androidTestImplementation(Dep.ext_junit)
-    androidTestImplementation(Dep.espresso_core)
+    implementation(Dependencies.Dep.kotlin_stdlib)
+    implementation(Dependencies.Dep.androidx_core)
+    implementation(Dependencies.Dep.androidx_appcompat)
+    implementation(Dependencies.Dep.android_material)
+    implementation(Dependencies.Dep.constraintlayout)
+    testImplementation(Dependencies.Dep.junit)
+    androidTestImplementation(Dependencies.Dep.ext_junit)
+    androidTestImplementation(Dependencies.Dep.espresso_core)
 
 
     //------------hilt -----------------------------------------
 
-    implementation(Dep.hilt_android)
-    kapt(Dep.hilt_compile)
-    implementation(Dep.hilt_lifecycle)
+    implementation(Dependencies.Dep.hilt_android)
+    kapt(Dependencies.Dep.hilt_compile)
+    implementation(Dependencies.Dep.hilt_lifecycle)
 
 
     //-------------Navigation component----------------------
 
-    implementation(Dep.navigation_fragment_ktx)
-    implementation(Dep.navigation_ui_ktx)
+    implementation(Dependencies.Dep.navigation_fragment_ktx)
+    implementation(Dependencies.Dep.navigation_ui_ktx)
 
 
     //----------------Room------------------------------
-    implementation(Dep.room_runtime)
-    kapt(Dep.room_compiler)
-    implementation(Dep.room_ktx)
+    implementation(Dependencies.Dep.room_runtime)
+    kapt(Dependencies.Dep.room_compiler)
+    implementation(Dependencies.Dep.room_ktx)
 
     //----------------dataStore----------------------
 
-    implementation(Dep.dataStore)
-    implementation(Dep.dataStoreCore)
-    implementation(Dep.preferences)
-    implementation(Dep.preferences_core)
+    implementation(Dependencies.Dep.dataStore)
+    implementation(Dependencies.Dep.dataStoreCore)
+    implementation(Dependencies.Dep.preferences)
+    implementation(Dependencies.Dep.preferences_core)
 
 
     //--------------kotlinx-coroutines----------------
 
-    implementation(Dep.coroutines)
-    implementation(Dep.coroutines_core)
-    implementation(Dep.lifecycle)
+    implementation(Dependencies.Dep.coroutines)
+    implementation(Dependencies.Dep.coroutines_core)
+    implementation(Dependencies.Dep.lifecycle)
 
     //--------------util----------------
-    implementation(Dep.multidex)
+    implementation(Dependencies.Dep.multidex)
     //---------------lifecycle------------------
 
-    implementation(Dep.liveData)
-    implementation(Dep.javaCommon)
+    implementation(Dependencies.Dep.liveData)
+    implementation(Dependencies.Dep.javaCommon)
 
 
 
     //------------------fragment-------------------
-    implementation(Dep.fragment)
+    implementation(Dependencies.Dep.fragment)
 
 }
 

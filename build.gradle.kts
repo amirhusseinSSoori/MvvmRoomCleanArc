@@ -1,4 +1,12 @@
+
+
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+
+
+//plugins {
+//    dependencyUpdates()
+//}
 buildscript {
 
     repositories {
@@ -28,3 +36,12 @@ allprojects {
 tasks.register("clean",Delete::class){
     delete(rootProject.buildDir)
 }
+
+//tasks.named("dependencyUpdates", com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask::class.java).configure {
+//
+//    // optional parameters
+//    checkForGradleUpdate = true
+//    outputFormatter = "json"
+//    outputDir = "build/dependencyUpdates"
+//    reportfileName = "report"
+//}
